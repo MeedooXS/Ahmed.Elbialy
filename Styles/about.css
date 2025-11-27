@@ -1,0 +1,193 @@
+/* --- Global Reset and Setup --- */
+:root {
+    /* Define color palette based on the image */
+    --color-dark: #222;
+    --color-light: #fff;
+    --color-primary: #fbe637; /* The striking yellow/gold color */
+    --color-text-dark: #333;
+    --color-text-light: #555;
+    --color-background-dark: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--color-text-dark);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header and Navigation --- */
+.main-header {
+    padding: 15px 0;
+    /* Style for the dark bar */
+    background-color: var(--color-dark);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-light);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 0.9em;
+    color: var(--color-light);
+    transition: color 0.3s;
+}
+
+/* Highlight the current page link (About) */
+.main-nav li:nth-child(2) a {
+    font-weight: bold;
+}
+
+/* --- Main Page Content --- */
+.page-title {
+    font-size: 2.2em;
+    padding: 40px 0 20px 0;
+}
+
+.content-section {
+    display: flex;
+    gap: 40px;
+    padding: 30px 20px;
+}
+
+.about-text,
+.background-text {
+    flex: 2; /* Text takes more space */
+}
+
+.about-image-placeholder {
+    flex: 1; /* Image takes less space */
+    min-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: var(--color-text-light);
+    background-color: var(--color-grey-placeholder);
+}
+
+.about-text h2,
+.background-text h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.about-text p,
+.background-text p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+
+/* Specific styling for the Background section focus points */
+.background-text .section-focus {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    font-size: 1em;
+}
+
+/* Styling for the reversed layout */
+.reversed {
+    /* Swap the order of children (Image, then Text) */
+    flex-direction: row-reverse;
+}
+
+.section-separator {
+    border: none;
+    height: 1px;
+    background-color: transparent; /* A simple visual separator */
+    margin: 30px 0;
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.contact-link a {
+    font-weight: bold;
+    color: var(--color-light);
+    transition: color 0.3s;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .content-section {
+        flex-direction: column; /* Stack image and text vertically */
+        padding: 30px 20px;
+    }
+    
+    .reversed {
+        flex-direction: column; /* Maintain text/image order */
+    }
+
+    .about-image-placeholder {
+        order: -1; /* Move the image placeholder above the text on small screens */
+        min-height: 250px;
+        margin-bottom: 20px;
+    }
+
+    .background-section .about-image-placeholder {
+        order: 0; /* The image in the second section stays at the top of its section */
+    }
+
+    .nav-content {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

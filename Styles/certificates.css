@@ -1,0 +1,209 @@
+/* --- Global Reset and Setup --- */
+:root {
+    /* Define color palette based on the image */
+    --color-dark: #222;
+    --color-light: #fff;
+    --color-primary: #fbe637; /* The striking yellow/gold color */
+    --color-text-dark: #333;
+    --color-text-light: white;
+    --color-background-dark: #000;
+    --color-dark-bg: #121212; /* Dark background for certificates page */
+    --color-header-bg: #1e1e1e; /* Dark color for header and footer */
+    --color-text-grey: #bbbbbb; /* Lighter grey for less prominent text */
+    --color-placeholder: #444444; /* Dark grey for certificate placeholders */
+}       
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-dark-bg);
+    color: var(--color-light);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header and Navigation --- */
+.main-header {
+    background-color: var(--color-light);
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 0.9em;
+    color: var(--color-dark);
+    /* Adding a hover effect for better UX */
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Highlight the current page link (Certificates) */
+.main-nav .active-link {
+    font-weight: bold;
+}
+
+/* --- Certificates Header --- */
+.certificates-header {
+    text-align: center;
+    padding: 60px 0 40px 0;
+}
+
+.certificates-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.certificates-header p {
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--color-text-grey);
+    line-height: 1.4;
+}
+
+/* --- Certificates Grid Section --- */
+.certificates-grid-section {
+    padding: 20px 0;
+}
+
+.certificates-grid {
+    display: grid;
+    /* Create a 3-column layout for desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.certificate-item {
+    background-color: #222; /* Dark background for the item box */
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.certificate-placeholder {
+    background-color: var(--color-placeholder);
+    height: 180px; /* Define height for the image/placeholder area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+}
+
+.certificate-info {
+    padding: 15px;
+    min-height: 90px; /* Ensure consistent height for text area */
+    display: flex;
+    flex-wrap: wrap; /* Allows text elements to flow */
+}
+
+.cert-title {
+    width: 100%; /* Title takes full width */
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.95em;
+}
+
+.cert-source {
+    /* Source text aligned left */
+    font-size: 0.85em;
+    color: var(--color-text-grey);
+}
+
+.cert-date {
+    /* Date text aligned right */
+    margin-left: auto;
+    font-size: 0.85em;
+    color: var(--color-text-grey);
+}
+
+/* --- Drive Link Text --- */
+.drive-link-text {
+    text-align: center;
+    padding: 60px 0;
+    color: var(--color-text-grey);
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-header-bg); /* Use the same dark color as the header */
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Center the copyright text */
+    align-items: center;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .certificates-grid {
+        /* Switch to a 2-column layout on medium screens */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .certificates-grid {
+        /* Switch to a single-column layout on small screens */
+        grid-template-columns: 1fr;
+    }
+
+    .certificates-header {
+        padding: 40px 0 20px 0;
+    }
+
+    .nav-content {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

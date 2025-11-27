@@ -1,0 +1,170 @@
+/* --- Global Reset and Setup --- */
+:root {
+    /* Define color palette based on the image */
+    --color-dark-bg: #121212; /* Very dark background */
+    --color-header-bg: #202c34; /* Dark blue/grey for header and footer */
+    --color-light: #fff;
+    --color-text-grey: #a0a0a0;
+    --color-border: #4a647d; /* Border color for the bottom of the header */
+    --color-placeholder: #d0d0d0; /* Light grey placeholder background */
+
+    /* Define color palette based on the image */
+    --color-dark: #222;
+    --color-light: #fff;
+    --color-primary: #fbe637; /* The striking yellow/gold color */
+    --color-text-dark: #333;
+    --color-text-light: #555;
+    --color-background-dark: #000;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-dark-bg);
+    color: var(--color-light);
+    /* Min-height setup to push footer down if content is short */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header and Navigation (Reused) --- */
+.main-header {
+    background-color: var(--color-light);
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 0.9em;
+    color: var(--color-dark);
+    /* Adding a hover effect for better UX */
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Highlight the current page link (CV) */
+.main-nav .active-link {
+    font-weight: bold;
+}
+
+/* --- CV Section Layout --- */
+.cv-page-content {
+    flex-grow: 1; /* Allows main content to fill remaining space */
+}
+
+.cv-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cv-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.cv-layout {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.cv-placeholder {
+    flex: 1;
+    max-width: 400px; /* Constrain the width for a document look */
+    height: auto; /* Tall height to resemble a CV page */
+    background-color: var(--color-placeholder);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    color: var(--color-text-grey);
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-header-bg);
+    padding: 20px 0;
+    /* Removed margin-top: auto because the body uses flex-direction: column */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .cv-layout {
+        flex-direction: column; /* Stack CVs vertically */
+        align-items: center;
+        gap: 30px;
+    }
+
+    .cv-placeholder {
+        max-width: 100%; /* Allow placeholders to take full width on smaller screens */
+        height: 500px; /* Reduce height for mobile view */
+    }
+}
+
+@media (max-width: 600px) {
+    .cv-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .cv-section {
+        padding: 40px 0;
+    }
+
+    .nav-content {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

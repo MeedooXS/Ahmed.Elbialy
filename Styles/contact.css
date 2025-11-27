@@ -1,0 +1,209 @@
+/* --- Global Reset and Setup --- */
+:root {
+    /* Define color palette based on the image */
+    --color-dark-bg: #121212; /* Very dark background */
+    --color-header-bg: #202c34; /* Dark blue/grey for header and footer */
+    --color-light: #fff;
+    --color-text-light: #f1f1f1;
+    --color-text-grey: #a0a0a0; /* For body text */
+    --color-border: #4a647d; /* Border color for the bottom of the header */
+    --color-input-bg: #d0d0d0; /* Light grey background for input fields */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-dark-bg);
+    color: var(--color-light);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header and Navigation (Reused) --- */
+.main-header {
+    padding: 15px 0;
+    background-color: var(--color-header-bg);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-light);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 0.9em;
+    color: var(--color-light);
+    transition: color 0.3s;
+}
+
+/* Highlight the current page link (Contact) */
+.main-nav .active-link {
+    font-weight: bold;
+}
+
+/* --- Contact Section Layout --- */
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.contact-layout {
+    display: flex;
+    gap: 60px;
+    /* Ensure layout starts from the top */
+    align-items: flex-start;
+}
+
+.contact-form {
+    flex: 2; /* Form takes more horizontal space */
+}
+
+.contact-info {
+    flex: 1; /* Info column takes less space */
+    padding-top: 40px; /* Aligns with the second row of the form */
+}
+
+/* --- Form Styling --- */
+.form-group-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-field.half-width {
+    width: 50%;
+}
+
+.form-field.full-width {
+    width: 100%;
+}
+
+label {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    color: var(--color-text-grey);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    background-color: var(--color-input-bg);
+    border: none;
+    padding: 12px 10px;
+    font-size: 1em;
+    color: var(--color-dark-bg);
+    border-radius: 2px;
+}
+
+textarea {
+    resize: none;
+}
+
+/* --- Contact Info Styling --- */
+.contact-info p {
+    font-size: 0.95em;
+    color: var(--color-text-grey);
+    line-height: 1.4;
+}
+
+.contact-info a {
+    color: var(--color-light);
+    font-weight: bold;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-header-bg);
+    padding: 20px 0;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .contact-layout {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 30px;
+    }
+
+    .contact-info {
+        padding-top: 0;
+        /* Move contact info to the top above the form on mobile, common pattern */
+        order: -1; 
+    }
+
+    .form-group-row {
+        flex-direction: column; /* Stack first/last name fields */
+        gap: 0;
+    }
+
+    .form-field.half-width {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-title {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .contact-section {
+        padding: 40px 0;
+    }
+
+    .nav-content {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,193 @@
+/* --- Global Reset and Setup --- */
+:root {
+    /* Define color palette based on the image */
+    --color-dark-bg: #121212; /* Very dark background */
+    --color-header-bg: #202c34; /* Dark blue/grey for header and footer */
+    --color-light: #fff;
+    --color-text-light: #f1f1f1;
+    --color-text-grey: #a0a0a0; /* For body text and intro paragraph */
+    --color-border: #4a647d; /* Border color for the bottom of the header */
+    /* Define color palette based on the image */
+    --color-dark: #222;
+    --color-light: #fff;
+    --color-primary: #fbe637; /* The striking yellow/gold color */
+    --color-text-dark: #333;
+    --color-text-light: white;
+    --color-background-dark: #000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--color-dark-bg);
+    color: var(--color-light);
+}
+
+.container {
+    max-width: 900px; /* Focused width for readability of long paragraphs */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header and Navigation (Reused) --- */
+.main-header {
+    background-color: var(--color-light);
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-dark);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 0.9em;
+    color: var(--color-dark);
+    /* Adding a hover effect for better UX */
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Highlight the current page link (Researches) */
+.main-nav .active-link {
+    font-weight: bold;
+}
+
+/* --- Research Header & Intro --- */
+.research-header {
+    text-align: center;
+    padding: 60px 0 40px 0;
+}
+
+.research-header h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.intro-paragraph {
+    color: var(--color-text-grey);
+    font-size: 0.95em;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* --- Research Abstracts --- */
+.research-abstracts {
+    padding: 20px 0 40px 0;
+}
+
+.research-item {
+    margin-bottom: 35px;
+}
+
+.research-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-text-light);
+}
+
+.research-item p {
+    margin-bottom: 10px;
+    color: var(--color-text-grey);
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.research-item p strong {
+    /* Highlight bolded text within the abstract */
+    color: var(--color-light);
+    font-weight: bold;
+}
+
+
+/* --- Acknowledgment --- */
+.acknowledgment {
+    padding: 20px 0 80px 0;
+    text-align: center;
+}
+
+.acknowledgment-title {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: var(--color-light);
+}
+
+.acknowledgment p {
+    color: var(--color-text-grey);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-header-bg);
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 600px) {
+    .research-header {
+        padding: 40px 0 20px 0;
+    }
+
+    .research-header h2 {
+        font-size: 2em;
+    }
+
+    .acknowledgment {
+        padding: 20px 0 50px 0;
+    }
+    
+    .nav-content {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        padding-top: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
