@@ -37,11 +37,11 @@ a {
 }
 
 /* --- Header and Navigation --- */
+/* --- Header and Navigation (MATCHING INDEX PAGE) --- */
 .main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
     padding: 15px 0;
-    /* Style for the dark bar */
-    background-color: var(--color-dark);
-    border-bottom: 2px solid var(--color-border);
 }
 
 .nav-content {
@@ -53,7 +53,7 @@ a {
 .logo {
     font-weight: bold;
     font-size: 1.1em;
-    color: var(--color-light);
+    color: #222;
 }
 
 .main-nav ul {
@@ -63,8 +63,12 @@ a {
 
 .main-nav a {
     font-size: 0.9em;
-    color: var(--color-light);
+    color: #222;
     transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #c9b92e; /* same gold highlight */
 }
 
 /* Highlight the current page link (About) */

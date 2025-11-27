@@ -2,7 +2,7 @@
 :root {
     /* Define color palette based on the image */
     --color-dark-bg: #121212; /* Very dark background */
-    --color-header-bg: #202c34; /* Dark blue/grey for header and footer */
+    --color-header-bg: #1e1e1e; /* Dark blue/grey for header and footer */
     --color-light: #fff;
     --color-text-grey: #a0a0a0;
     --color-border: #4a647d; /* Border color for the bottom of the header */

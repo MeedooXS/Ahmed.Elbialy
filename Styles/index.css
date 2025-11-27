@@ -6,7 +6,7 @@
     --color-primary: #c9b92e; /* The striking yellow/gold color */
     --color-text-dark: #333;
     --color-text-light: #555;
-    --color-background-dark: #000;
+    --color-background-dark: #1e1e1e;
 }
 
 * {

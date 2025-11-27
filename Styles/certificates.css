@@ -6,7 +6,7 @@
     --color-primary: #fbe637; /* The striking yellow/gold color */
     --color-text-dark: #333;
     --color-text-light: white;
-    --color-background-dark: #000;
+    --color-background-dark: #000; /* Dark background for overall site */
     --color-dark-bg: #121212; /* Dark background for certificates page */
     --color-header-bg: #1e1e1e; /* Dark color for header and footer */
     --color-text-grey: #bbbbbb; /* Lighter grey for less prominent text */
